@@ -10,27 +10,28 @@ public class PrimeComplexity {
 		System.out.println("Enter the range");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Long testPrime =  Long.parseLong(br.readLine());
+		FileWriter fileWriter = new FileWriter("data.csv");
 		for(long i=2; i<= testPrime; i++){
-			FileWriter fileWriter = new FileWriter("data.csv");
+			
 			long st1 = System.nanoTime();
 			boolean val = testPrimeSlow(i);
 			long et1 = System.nanoTime();
 			if(val)
-				fileWriter.append(i + ",slow,"+ (et1-st1)+",true"+"\n");
+				fileWriter.write(i + ",slow,"+ (et1-st1)+",true"+"\n");
 			else
-				fileWriter.append(i + ",slow,"+ (et1-st1)+",false"+"\n");
+				fileWriter.write(i + ",slow,"+ (et1-st1)+",false"+"\n");
 			System.out.println("Time Taken:" + (et1 - st1));
 			System.out.println("Testing fast prime");
 			long st2 = System.nanoTime();
 			boolean val2 = testPrimeFast(i);
 			long et2 = System.nanoTime();
-			System.out.println("Time Taken:" + (et2 - st2)+",true"+"\n");
 			if(val2)
-				fileWriter.append(i+",fast,"+ (et2-st2)+",true"+"\n");
+				fileWriter.write(i+",fast,"+ (et2-st2)+",true"+"\n");
 			else
-				fileWriter.append(i+",fast,"+ (et1-st1)+",false"+"\n");
-			fileWriter.close();
+				fileWriter.write(i+",fast,"+ (et2-st2)+",false"+"\n");
+			
 		}
+		fileWriter.close();
 	}
 	
 	static boolean testPrimeSlow(long tester){
