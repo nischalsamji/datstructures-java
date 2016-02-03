@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class PrimeComplexity {
 	//This is to test the time complexity of a sample java program
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		System.out.println("Enter a number");
+		System.out.println("Enter the range");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Long testPrime =  Long.parseLong(br.readLine());
 		for(long i=2; i<= testPrime; i++){
