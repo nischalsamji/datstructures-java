@@ -12,7 +12,6 @@ public class PrimeComplexity {
 		Long testPrime =  Long.parseLong(br.readLine());
 		for(long i=2; i<= testPrime; i++){
 			FileWriter fileWriter = new FileWriter("data.csv");
-			System.out.println(i);
 			long st1 = System.nanoTime();
 			boolean val = testPrimeSlow(i);
 			long et1 = System.nanoTime();
