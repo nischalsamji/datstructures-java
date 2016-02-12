@@ -18,6 +18,7 @@ class AppleStocks{
 					highStock = stockDetails[i];		
 			}
 		System.out.println(highStock - lowStock);
+		System.out.println("Saving Streak just in time");
 		}
 		
 	
