@@ -8,8 +8,10 @@ public class LinkedList{
 		addNode(hd, 15);
 		
 		printNodes(hd);
+		printNodes(reverseList(hd));
 		
 		
+		deleteNode(hd, 32);
 		
 	}
 	
@@ -23,13 +25,43 @@ public class LinkedList{
 		
 	}
 	
+	public static Node reverseList(Node hd){
+		
+		Node curr = hd;
+		Node prev =  null;
+		while(curr!= null){
+			Node nextNode = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = nextNode;		
+		}
+		
+		return prev;
+	}
+	
+	public static boolean deleteNode(Node hd, int data){
+		
+		Node curr = hd;
+		Node prev = null;
+		while(curr!=null)
+		{
+			
+			if(curr.data == data){
+				
+			}
+		}
+		
+		
+		return true;
+	}
+	
 	public static void printNodes(Node hd){
 		Node curr = hd;
 		while(curr != null){
 			System.out.print(curr.data + "-->");
 			curr = curr.next;
 		}
-		
+		System.out.println();
 	}
 }
 
